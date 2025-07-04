@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  lighttpd:
+    image: sebp/lighttpd  # o rtsp/lighttpd si es necesario
+    container_name: lightserver
+    ports:
+      - "8080:80"
+    volumes:
+      - ./sitio-web:/var/www/html
+    restart: unless-stopped

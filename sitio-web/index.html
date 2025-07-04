@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighttpd en Docker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Servidor Lighttpd Test en Docker</h1>
+    
+    <p class="success">¡El servidor web se ha configurado correctamente!</p>
+    
+    <div class="docker-guide">
+        <h2>Guía de Dockerización</h2>
+        
+        <h3>1. Estructura de archivos</h3>
+        <p>El proyecto tiene esta estructura:</p>
+        <pre><code>lighttpd-site/
+├── index.html
+├── css/
+│   └── styles.css
+└── images/</code></pre>
+        
+        <h3>2. Comando utilizado</h3>
+        <code>docker run -d --name lightserver -p 8080:80 -v "D:\universidad\modulo 3\lighttpd-site":/var/www/html rtsp/lighttpd</code>
+        
+        <div class="note">
+            <h3>Explicación del comando:</h3>
+            <ul>
+                <li><strong>-d</strong>: Ejecuta el contenedor en segundo plano</li>
+                <li><strong>--name lightserver</strong>: Asigna un nombre al contenedor</li>
+                <li><strong>-p 8080:80</strong>: Mapea el puerto 8080 del host al 80 del contenedor</li>
+                <li><strong>-v "ruta_local":/var/www/html</strong>: Monta tu carpeta local en el contenedor</li>
+            </ul>
+        </div>
+        <h3>3. Comandos útiles</h3>
+        <ul>
+            <li>Ver contenedores en ejecución: <code>docker ps</code></li>
+            <li>Detener el contenedor: <code>docker stop lightserver</code></li>
+            <li>Iniciar el contenedor: <code>docker start lightserver</code></li>
+            <li>Eliminar el contenedor: <code>docker rm lightserver</code></li>
+            <li>Ver logs del contenedor: <code>docker logs lightserver</code></li>
+        </ul>
+    </div>
+    <footer style="margin-top: 40px; text-align: center; color: #7f8c8d;">
+        <p>Proyecto dockerizado para el Módulo 3 de la universidad</p>
+        <p><b>TecnoCore</b></p>
+    </footer>
+</body>
+</html>
